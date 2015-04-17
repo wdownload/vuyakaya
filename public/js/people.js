@@ -1,7 +1,8 @@
 $(function(){
 
 	// Getting relatories
-	$('#pesqPeople').on('click', function(){
+	$('#pesqPeople').on('click', function(evt){
+		evt.preventDefault();
 		var data = $('#peopleSearch').serialize();
 		getPeople(data);
 	});
