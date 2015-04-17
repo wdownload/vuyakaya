@@ -2,9 +2,12 @@ $(function(){
 
 	// Getting relatories
 	$('#pesqPeople').on('click', function(evt){
-		evt.preventDefault();
 		var data = $('#peopleSearch').serialize();
 		getPeople(data);
+	});
+
+	$('#peopleSearch').submit(function(evt){
+		evt.preventDefault();
 	});
 
 	function getPeople(data){
