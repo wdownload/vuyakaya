@@ -22,7 +22,7 @@ $(function(){
 			if (result.data.length) {
 				$('#procResult').html('');		
 				for(var i = 0; i < result.data.length; i++){
-					$('#procResult').append('<table class="table"><tbody><tr id="det"'+i+'><td><a href="#" data-toggle="modal" data-target="#userDetails" class="detUser" valor="Nome: '+result.data[i].name+' Cidade: '+result.data[i].city+' - '+result.data[i].region+' Descicao: '+ result.data[i].desc+'">'+result.data[i].name+'</a></td><td style="text-align: right;"><a href="#" data-toggle="modal" class="detUser" data-target="#userDetails" valor="Nome: '+result.data[i].name+' Cidade: '+result.data[i].city+' - '+result.data[i].region+' Descicao: '+ result.data[i].desc+'">'+result.data[i].city +' - '+ result.data[i].region+'</a></td></tr></tbody></table>');		
+					$('#procResult').append('<table class="table"><tbody><tr id="det"'+i+'><td><a href="#" data-toggle="modal" data-target="#userDetails" class="detUser" valor="'+result.data[i]._id+'">'+result.data[i].name+'</a></td><td style="text-align: right;"><a href="#" data-toggle="modal" class="detUser" data-target="#userDetails" valor="'+result.data[i]._id+'">'+result.data[i].city +' - '+ result.data[i].region+'</a></td></tr></tbody></table>');		
 				}	
 			}else{
 				$('#procResult').html("Nenhum resultado foi encontrado");
