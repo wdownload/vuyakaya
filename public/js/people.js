@@ -1,6 +1,6 @@
 $(function(){
 
-	// Getting relatories
+	// Getting People list
 	$('#pesqPeople').on('click', function(evt){
 		var data = $('#peopleSearch').serialize();
 		getPeople(data);
@@ -10,8 +10,15 @@ $(function(){
 		evt.preventDefault();
 	});
 
+	$('.detUser').on('click', function(){
+		var id = $(this).attr("valor");
+		getPersonDetail(id);
+	});
+
+	// Getting people list
 	function getPeople(data){
-		searchAjax(data, function(result){
+		var link = '/people';
+		searchAjax(link, data, function(result){
 			if (result.data.length) {
 				$('#procResult').html('');		
 				for(var i = 0; i < result.data.length; i++){
@@ -24,19 +31,31 @@ $(function(){
 		});
 	}
 
-	function searchAjax(data, callback){
+	// Getting Person details
+	function getPersonDetail(id){
+		var link = '/pessoas/'+id;
+		searchAjax(link, "a", function(result){
+			if (result) {
+				$('#detalhesuser').html('Nome: '+result.name+'<br>Cidade: '+result.city+'<br>Regiao: '+result.region+'<br>Outras informacoes: '+result.desc);	
+			}else{
+				$('#detalhesuser').html("Nenhum resultado foi encontrado");
+			};
+			
+		});
+	}
+
+	function searchAjax(link, data, callback){
 		$.ajax({
-			url: '/pessoas',
+			url: link,
 			type: 'POST',
 			dataType: 'json',
 			data: data,
 			beforeSend: function(){
-				$('#pesqRel').prop('disabled', true);
-				$('#loader').show();
+				$('#detalhesuser').html('');
+				$('.load').show();
 			},
 			complete: function(){
-				$('#pesqRel').prop('disabled',false);
-				$('#loader').hide();
+				$('.load').hide();
 			},
 			success: function(data, textStatus, xhr){
 				return callback(data);

@@ -208,3 +208,7 @@ a:hover{
 #procResult{
 	margin-top: 30px;
 }
+/* Loader Gif...*/
+.load{
+	display: none;
+}

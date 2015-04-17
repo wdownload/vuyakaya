@@ -57,9 +57,9 @@
 						<% for(var i = 0; i < users.data.length; i++) {%>
 							<tr>
 								<td>
-								<a href="#" data-toggle="modal" data-target="#userDetails" class="detUser" valor="<%= 'Nome: '+users.data[i].name+'<br><br> Cidade: '+users.data[i].city+' - '+users.data[i].region+'<br><br> Descicao: '+ users.data[i].desc %>"><%= users.data[i].name %></a>
+								<a href="#" data-toggle="modal" data-target="#userDetails" class="detUser" valor="<%= users.data[i]._id %>"><%= users.data[i].name %></a>
 								</td>
-								<td style="text-align: right;"><a href="#" data-toggle="modal" class="detUser" data-target="#userDetails" valor="<%= 'Nome: '+users.data[i].name+',<br> Cidade: '+users.data[i].city+' - '+users.data[i].region+',<br> Descicao: '+ users.data[i].desc %>"><%= users.data[i].city +" - "+ users.data[i].region %></a></td>
+								<td style="text-align: right;"><a href="#" data-toggle="modal" class="detUser" data-target="#userDetails" valor="<%= users.data[i]._id %>"><%= users.data[i].city +" - "+ users.data[i].region %></a></td>
 							</tr>
 						<%}%>
 						</tbody>
@@ -71,15 +71,15 @@
 		<% include partials/footer %>
 
 		<!-- Modals -->
-			<div class="modal fade" id="userDetails" tabindex="-1" role="dialog" aria-labelledby="checkModal" aria-hidden="true">
+		<div class="modal fade" id="userDetails" tabindex="-1" role="dialog" aria-labelledby="checkModal" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header text-center">
 						</div>
 						<div class="modal-body">
-							<div id="detalhesuser">
-								
-							</div>
+							<div id="detalhesuser"></div>
+				       		<div class="load"><img src="/img/loader.gif"></div>
+
 						</div>
 						<div class="caption modal-footer text-center">
 							<h3 class="text-center">
@@ -88,19 +88,11 @@
 						</div>
 					</div>
 				</div>
-			</div>
+		</div>
+
 	</div>
 	<% include partials/script %>   
 	<script src="/js/people.js"></script>
-	<script>
-		$(function(){
-			$('.detUser').on('click', function(){
-				var id = $(this).attr("valor");
-				$('#detalhesuser').html(id);
-			})
-		});
-		
-	</script>
   </body>
 </html>
  

@@ -37,10 +37,10 @@ UsuarioController.prototype.criar = function(usuario, callback) {
 	});
 };
 
-UsuarioController.prototype.selecionar = function(userid, callback) {
-	Usuario.findOne({_id: userid}, function(err, user){
-		if (err) callback(err);
-		callback(null, {success: true, data: user});
+UsuarioController.prototype.selecionarId = function(userid, callback) {
+	Usuario.findOne({_id: new  mongoose.Types.ObjectId(userid)}, function(err, user){
+		if (err) return callback(err);
+		return callback(null, {success: true, data: user});
 	});
 };
 

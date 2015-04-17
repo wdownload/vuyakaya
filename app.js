@@ -135,6 +135,16 @@ app.post('/pessoas/new', function(req, res){
     });
 });
 
+app.post('/pessoas/:id', function(req, res){
+    console.log(req.params.id);
+    var id = req.params.id;
+
+    UsuarioController.selecionarId(id, function(err, result){
+        if(err) console.log(err); 
+        else if (result.success) res.send(result.data);
+    });
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

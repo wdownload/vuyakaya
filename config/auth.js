@@ -38,7 +38,7 @@ function(req, username, password, next){
     });
 
     passport.deserializeUser(function(id, next) {
-        UsuarioController.selecionar(id, next);
+        UsuarioController.selecionarId(id, next);
     });
 
 module.exports = passport;
