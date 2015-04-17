@@ -22,7 +22,7 @@ $(function(){
 			if (result.data.length) {
 				$('#procResult').html('');		
 				for(var i = 0; i < result.data.length; i++){
-					$('#procResult').append('<a href="#" data-toggle="modal" data-target="#userDetails" class="detUser" valor="'+users.data[i]._id+'"><h4>'+users.data[i].name+'<span style="float: right">'+users.data[i].city +' - '+ users.data[i].region+'</span></h4></a>');			
+					$('#procResult').append('<a href="#" data-toggle="modal" data-target="#userDetails" class="detUser" valor="'+result.data[i]._id+'"><h4>'+result.data[i].name+'<span style="float: right">'+result.data[i].city +' - '+ result.data[i].region+'</span></h4></a>');			
 				}	
 			}else{
 				$('#procResult').html("Nenhum resultado foi encontrado");
