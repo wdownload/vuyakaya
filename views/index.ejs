@@ -38,32 +38,33 @@
 		</nav>
 		<!-- Profile Page -->
 		<div class="container content">
-			<form action="" id="peopleSearch" method="POST" class="form-horizontal">
+			<form action="" id="peopleSearch" method="POST" class="form-horizontal center-block" style="  max-width: 856px;">
 				<div class="input-group">
-					<input type="text" name="searchVal" class="form-control" placeholder="Type the {user, region/city} you want to search">
+					<input type="text" name="searchVal" class="form-control input-search" placeholder="Pesquise por nome ou regiao">
 					<span class="input-group-btn sbt">
 						<button class="btn btn-default glyphicon glyphicon-search consultar-button" type="button" id="pesqPeople"></button>
 					</span>
 				</div>
 			</form>
 
-			<div class="conteudoProc  center-block" id="procResult" style="max-width: 800px">
+			<div class="conteudoProc  center-block" id="procResult">
 
 				<% if(users.length < 1) {%>
 					<p>Nao existem usuarios</p>
 				<%}else{%>
-					<table class="table">
-						<tbody>
-						<% for(var i = 0; i < users.data.length; i++) {%>
-							<tr>
-								<td>
-								<a href="#" data-toggle="modal" data-target="#userDetails" class="detUser" valor="<%= users.data[i]._id %>"><%= users.data[i].name %></a>
-								</td>
-								<td style="text-align: right;"><a href="#" data-toggle="modal" class="detUser" data-target="#userDetails" valor="<%= users.data[i]._id %>"><%= users.data[i].city +" - "+ users.data[i].region %></a></td>
-							</tr>
-						<%}%>
-						</tbody>
-					</table>
+
+					<% for(var i = 0; i < users.data.length; i++) {%>
+
+					<a href="#" data-toggle="modal" data-target="#userDetails" class="detUser" valor="<%= users.data[i]._id %>">
+					<h4>
+						<%= users.data[i].name %>
+						<span class="span-det">
+							<%= users.data[i].city +" - "+ users.data[i].region %>
+						</span>
+					</h4>
+					</a>
+
+					<%}%>
 				<%}%>
 			</div>
 		</div>
@@ -80,6 +81,35 @@
 							<div id="detalhesuser"></div>
 				       		<div class="load"><img src="/img/loader.gif"></div>
 
+						</div>
+						<div class="caption modal-footer text-center">
+							<h3 class="text-center">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+							</h3>
+						</div>
+					</div>
+				</div>
+		</div>
+
+		<div class="modal fade" id="termosCondicoes" tabindex="-1" role="dialog" aria-labelledby="checkModal" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header text-center">
+						</div>
+						<div class="modal-body">
+							<div id="termos">
+								<p><b>Vuyakaya™</b> é uma plataforma WEB totalmente grátis, que visa apoiar todos os moçambicanos que estejam ou que possuem familiares e/ou amigos na África do sul, vítimas dos recentes ataques de Xenofobia.
+
+								Com a ferramenta, qualquer cidadão moçambicano pode efectuar o cadastro e submeter os dados necessários para que possa ser encontrado ou pesquisar para encontrar alguma pessoa, em caso de desaparecimento.</p><br>
+
+ 
+
+								<h4>NOTA IMPORTANTE</h4>
+
+								<p>O <b>VuyaKaya™</b>, sendo uma plataforma aberta, não assume responsabilidade sobre a total veracidade das informações nela contida, uma vez que toda a informação submetida na mesma é de responsabilidade do utilizador.
+
+								Embora quantos mais dados fornecidos, mais fácil seja a possibilidade de se encontrar algum desaparecido, é igualmente responsabilidade do utilizador, toda informação pessoal que partilha na plataforma.</p>
+							</div>
 						</div>
 						<div class="caption modal-footer text-center">
 							<h3 class="text-center">

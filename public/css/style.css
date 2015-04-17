@@ -30,6 +30,9 @@ a:hover, a:focus{
 a:hover{
 	color: #e74c3c;
 }
+.input-search::-webkit-input-placeholder{
+	font-style: italic;
+}
 
 .navbar-brand img{
 	width: 120px;
@@ -104,6 +107,10 @@ a:hover{
 	box-shadow: none;
 	height: 40px;
 }
+.input-search, .our-form-control{
+	background: #fff;
+	border: none;
+}
 
 .form-control:focus, .login-form .content-login input:focus, .perfil-div .content input#celular:focus{
 	border-color: #e74c3c;
@@ -155,14 +162,14 @@ a:hover{
 /*Footer content*/
 .content{
 	margin-top: 20px;
-	padding-bottom:50px;
+	padding-bottom:70px;
 }
 .wrapper{
 	min-height:100%;
 	position:relative;
 }
 .footer{
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	left: 0;
 	background: #fff;
@@ -206,9 +213,33 @@ a:hover{
 }
 
 #procResult{
+	max-width: 856px;
+	background: #fff;
+	padding: 22px;
 	margin-top: 30px;
 }
 /* Loader Gif...*/
 .load{
 	display: none;
+}
+
+.detUser h4{
+	font-size: 16px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+	font-weight: bold;
+	opacity: .7;
+}
+.span-det{
+	float: right;
+	font-weight: normal;
+}
+
+.termos{
+	position: absolute;
+	right: 20px
+}
+
+#termosCondicoes p{
+	line-height: 22px
 }

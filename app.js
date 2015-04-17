@@ -47,6 +47,12 @@ app.get('/', function(req, res, next) {
     console.log( req.user)
   UsuarioController.selecionarTodos(function(err, usuarios){
     if (err) res.render('error');
+    for(var i = 0; i < usuarios.data.length; i++){
+        if(usuarios.data[i].city == undefined) usuarios.data[i].city = "Cidade indisponivel";
+
+        if(usuarios.data[i].region == undefined) usuarios.data[i].region = "Regiao indisponivel"
+    }
+
     res.render('index', {users: usuarios, logado: req.user});
   });
 });
@@ -103,6 +109,7 @@ app.post('/pessoas', function(req, res){
     var character = req.body.searchVal;
     UsuarioController.selecionarCaracter(character, function(err, usuarios){
         if (err) res.render("error");
+
         console.log(usuarios);
         res.send(usuarios);
     });
@@ -131,7 +138,8 @@ app.post('/pessoas/new', function(req, res){
 
     UsuarioController.criar(newUser, function(err, result){
         if(err) console.log(err); 
-        else if (result.success) res.redirect('/login');
+
+        if (result.success) res.redirect('/login');
     });
 });
 
@@ -141,7 +149,14 @@ app.post('/pessoas/:id', function(req, res){
 
     UsuarioController.selecionarId(id, function(err, result){
         if(err) console.log(err); 
-        else if (result.success) res.send(result.data);
+
+        if (result.success){
+            if(result.data.city == undefined) result.data.city = "Cidade indisponivel";
+            if(result.data.region == undefined) result.data.region = "Regiao indisponivel"
+            if(result.data.desc == undefined) result.data.desc = "Sem informacoes adicionais"
+
+            res.send(result.data);
+        } 
     });
 });
 
