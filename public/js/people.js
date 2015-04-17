@@ -17,7 +17,7 @@ $(function(){
 
 	// Getting people list
 	function getPeople(data){
-		var link = '/people';
+		var link = '/pessoas';
 		searchAjax(link, data, function(result){
 			if (result.data.length) {
 				$('#procResult').html('');		
