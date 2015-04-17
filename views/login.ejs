@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html></html>
+<head>
+  <title>Entrar no VuyaKaya</title>
+  <% include partials/head %>
+
+</head>
+<body class="body-login">
+  <div class="container">
+        
+    <div class="login-form center-wrapper">
+      <div class="header">
+        <!-- <img src="/img/logo.png"> -->
+        <p>VuyaKaya</p>
+      </div>
+       <% if (message.length > 0) { %>
+            <div id="message">
+                <h4 class="text-center error-message" style="color: red;"><%= message %></h4>
+            </div>
+        <% } %>
+      <form action="/login" id="loginForm" method="POST">
+        <div class="form-control-wrapper login-username">
+          <label for="uname">Nome do usu&aacute;rio</label>
+          <input type="text" id="uname" name="username" class="form-control empty">
+        </div>
+        <div class="form-control-wrapper login-password">
+          <label for="pass">Senha</label>
+          <input type="password" id="pass" name="password" class="form-control empty">
+          
+        </div>      
+
+        <div class="login-submit text-center">
+          <input type="submit" id="doLoginSubmit" value="Entrar" class="btn btn-red">
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- JQuery-->
+  <script src="/js/jquery-1.11.2.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</body>

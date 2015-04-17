@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VuyaKaya</title>
+	<% include partials/head %>   
+  </head>
+  <body>
+
+	<div class="wrapper">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+		    	<div class="navbar-header">
+			      <a class="navbar-brand" href="/">
+			      	<p>Vuya Kaya</p>
+			      </a>
+			    </div>
+
+			     <div id="vk-menu">
+					<ul class="nav navbar-nav" bs-active-link>
+						<li>
+							<a href="/logout"><span class="glyphicon glyphicon-off sair" aria-hidden="true"></span>Sair</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Profile Page -->
+		<div class="container content">
+			<div class="formDet center-block">
+				<form action="/location/<%= user._id %>" method="POST" class="form-horizontal">
+
+					<div class="form-group">
+						<label for="city">Cidade onde se encontra</label>
+          				<input type="text" id="city" name="city" class="form-control empty" required>
+					</div>
+
+					<div class="form-group">
+						<label for="region">Regiao onde se encontra</label>
+          				<input type="text" id="region" name="region" class="form-control empty" required>
+					</div>
+
+					<div class="form-group">
+						<label for="desc">Informacoes adicionais</label>
+          				<input type="text" id="desc" name="desc" class="form-control empty" required>
+					</div>
+
+					<div class="caption">
+						<h3 class="text-center">
+							<button class="btn btn-red" id="registar" type="submit">Actualizar</button>
+							<button class="btn btn-red" type="reset">Cancelar</button>
+						</h3>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+
+		<% include partials/footer %>
+
+	</div>
+
+  </body>
+</html>
+ 

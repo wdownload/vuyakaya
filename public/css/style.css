@@ -1,0 +1,210 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+html, body{
+	height: 100%;
+	margin:0;
+	padding:0;
+}
+body{
+	padding-top: 90px;
+	background: #f4f4f4;
+	font-family: Lato;
+}
+ul li{
+	list-style: none;
+}
+hr{
+	border-top: 1px solid #ccc;
+}
+
+img:focus, a:focus{
+	outline: none;
+}
+a{
+	color: #000;
+}
+a:hover, a:focus{
+	text-decoration: none;
+}
+
+a:hover{
+	color: #e74c3c;
+}
+
+.navbar-brand img{
+	width: 120px;
+}
+.navbar-fixed-top{
+	background: #fff;
+	border: none;
+}
+.navbar-fixed-top a{
+	color: #e74c3c !important;
+}
+.sair{
+	margin-right: 10px;
+}
+
+/*LOGIN FORM*/
+.login-form .header img{
+	width: 120px;
+	position: relative;
+	margin-left: -60px;
+	left: 50%;
+	top: 10px;
+
+}
+
+.login-form .header p{
+	color: #1a4d15;
+	margin-top: 29px;
+	text-align: center;
+	font-weight: bold;
+	font-size: x-large;
+}
+.login-form{
+	background: #fff !important;
+	width: 400px;
+	margin: 0 auto;
+}
+
+.login-form .form-control-wrapper{
+	margin: 25px 0;
+}
+
+.login-form form{
+	margin: 0 auto;
+	width: 300px
+}
+.login-submit{
+	padding: 25px 0;
+}
+.login-submit .btn-primary{
+	text-transform: none;
+}
+
+/* End of LOGIN FORM*/
+
+/* Details at Location*/
+.formDet{
+	max-width: 400px; 
+}
+
+.no-border{
+	border: none;
+}
+
+.main-page .caption{
+	clear: both;
+	padding-top: 30px;
+}
+.form-control{
+	background: inherit;
+	border-radius: 0px;
+	box-shadow: none;
+	height: 40px;
+}
+
+.form-control:focus, .login-form .content-login input:focus, .perfil-div .content input#celular:focus{
+	border-color: #e74c3c;
+	outline: 0;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(231, 76, 60,.6) !important;
+}
+
+.btn-red:focus, .btn-green:focus{
+	outline: none;
+	color: #fff;
+}
+.btn-red, .btn-green{
+	background-color: #e74c3c;
+	color: #fff;
+	padding: 11px 67px;
+	border-radius: 0;
+	transition: all ease-in-out .30s;
+}
+.btn-red:hover{
+	background: #fff;
+	color: #e74c3c;
+}
+.btn-green{
+	background: #2ecc71;
+}
+
+
+
+.btn-login{
+	border: none;
+	padding: 11px 25px;
+}
+
+
+@media (min-width: 1200px){
+	.container {
+	  width: 1100px;
+	}
+}
+
+
+/*Tem uma cor diferente dos demais botoes*/
+.btn-login:hover, .btn-modal-accept:hover, .btn-modal-cancel:hover{
+	background: #f4f4f4;
+}
+
+
+
+/*Footer content*/
+.content{
+	margin-top: 20px;
+	padding-bottom:50px;
+}
+.wrapper{
+	min-height:100%;
+	position:relative;
+}
+.footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: #fff;
+	width:100%;
+	height:50px;
+}
+.footer p{
+	line-height: 50px;
+	margin: 0;
+	color: #676767
+}
+
+.consultar-button{
+	color: #fff;
+	background: #e74c3c;
+	height: 40px;
+ 	width: 89px;
+	border-radius: 0;
+	border: none;
+	transition: all ease-in-out .30s;
+}
+.consultar-button:hover{
+	color: #e74c3c;
+	background: #fff;
+}
+
+.btn-red:active, .consultar-button:active{
+	box-shadow: none;
+}
+.consultar-button:focus{
+	background: #fff;
+	color: #e74c3c;
+	outline: none;
+}
+.btn-red:active:focus, .consultar-button:active:focus{
+	outline: none;
+}
+.sbt{
+	position: relative;
+	top: -1px;
+}
+
+#procResult{
+	margin-top: 30px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VuyaKaya</title>
+	<% include partials/head %>   
+  </head>
+  <body>
+
+	<div class="wrapper">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+		    	<div class="navbar-header">
+			      <a class="navbar-brand" href="/">
+			      	<p>Vuya Kaya</p>
+			      	<!-- <img alt="Brand" src="/img/cmm-logo.png"> -->
+			      </a>
+			    </div>
+
+			     <div id="vk-menu">
+					<ul class="nav navbar-nav" bs-active-link>
+					<% if(logado != undefined ) {%>
+						<li>
+							<a href="/logout"><span class="glyphicon glyphicon-off sair" aria-hidden="true"></span>Sair</a>
+						</li>
+					<%}else {%>
+						<li><a href="/pessoas/new">Criar conta</a></li>
+						<li><a href="/login">Entrar</a></li>
+					<%}%>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- Profile Page -->
+		<div class="container content">
+			<form action="/pessoas" id="peopleSearch" method="POST" class="form-horizontal">
+				<input type="text" name="searchVal" class="form-control" placeholder="Type the {user, region/city} you want to search">
+				<button type="button" id="pesqPeople" class=" btn btn-red">Prourar</button>
+			</form>
+
+			<div class="conteudoProc">
+
+				<% if(users.length < 1) {%>
+					<p>Nao existem usuarios</p>
+				<%}else{%>
+					<% for(var i = 0; i < users.data.length; i++) {%>
+					<p><%= users.data[i].name %></p>
+				<%} }%>
+
+			</div>
+		</div>
+
+		<% include partials/footer %>
+
+	</div>
+	<% include partials/script %>   
+	<script src="/js/people.js"></script>
+  </body>
+</html>
+ 
+
+
+
