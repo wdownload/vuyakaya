@@ -1,16 +1,17 @@
 $(function(){
 
 	// Getting People list
-	$('#pesqPeople').on('click', function(evt){
+
+
+	$('#peopleSearch').submit(function(evt){
+		evt.preventDefault();
 		var data = $('#peopleSearch').serialize();
 		getPeople(data);
 	});
 
-	$('#peopleSearch').submit(function(evt){
-		evt.preventDefault();
-	});
-
 	$('.detUser').on('click', function(){
+		alert($(this).attr("valor"));
+		
 		var id = $(this).attr("valor");
 		getPersonDetail(id);
 	});
@@ -22,7 +23,7 @@ $(function(){
 			if (result.data.length) {
 				$('#procResult').html('');		
 				for(var i = 0; i < result.data.length; i++){
-					$('#procResult').append('<a href="#" data-toggle="modal" data-target="#userDetails" class="detUser" valor="'+result.data[i]._id+'"><h4>'+result.data[i].name+'<span style="float: right">'+result.data[i].city +' - '+ result.data[i].region+'</span></h4></a>');			
+					$('#procResult').append('<a href="#" data-toggle="modal" data-target="#userDetails" class="detUser" valor="'+result.data[i]._id+'"><h4>'+result.data[i].name+'<span class="span-det">'+result.data[i].city +' - '+ result.data[i].region+'</span></h4></a>');			
 				}	
 			}else{
 				$('#procResult').html("Nenhum resultado foi encontrado");
