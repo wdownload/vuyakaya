@@ -10,7 +10,7 @@ $(function(){
 	});
 
 	$('.detUser').on('click', function(){
-		alert($(this).attr("valor"));
+
 		
 		var id = $(this).attr("valor");
 		getPersonDetail(id);
